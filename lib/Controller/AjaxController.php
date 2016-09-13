@@ -51,8 +51,7 @@ class AjaxController extends Controller {
 	/**
 	 * AJAX handler for getting the config
 	 *
-	 * TODO use eventsource
-	 * @NoCSRFRequired TODO remove
+	 * TODO use eventsource for a recoursive implementation, eg after clicking a recalculate button
 	 * @NoAdminRequired
 	 * @return JSONResponse with the current config
 	 */
@@ -65,11 +64,14 @@ class AjaxController extends Controller {
 			$includeThumbnails = false;
 		}
 
+		$appFolder = \OC::$server->getAppFolder();
+
 		$folder = \OC::$server->getUserFolder();
 		if ($includeThumbnails) {
 			// to include thumbnails start at the real user home
 			$folder = $folder->getParent();
 		}
+		// find all images in the users storage
 		$nodes = $folder->searchByMime('image');
 		$max = 0;
 		$sizes = [];
@@ -92,7 +94,7 @@ class AjaxController extends Controller {
 		$sorted = array_keys($sizes);
 		sort($sorted);
 
-		foreach ($sorted as $key => $value) {
+		foreach ( $sorted as $key => $value) {
 			$sorted[$key] = ['size' => $value, 'count' => $sizes[$value]];
 		}
 

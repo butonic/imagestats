@@ -20,7 +20,5 @@
  *
  */
 
-OCP\User::checkAdminUser();
-
 $tmpl = new OCP\Template( 'imagestats', 'settings/personal' );
 return $tmpl->fetchPage();

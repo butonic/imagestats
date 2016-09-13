@@ -1,3 +1,7 @@
+/*
+ * This css file is requested by templates/stats.php and adds colors to the size bars
+ */
+
 #imageStatsBars .statrow {
 	margin: 2px;
 }

@@ -23,8 +23,12 @@
 return [
 	'routes' => [
 		[
+			// This magic route will instantiate the PageController and call getStats() on it
 			'name' => 'page#getStats',
+			// matches hostname/path/to/oc/(index.php)/apps/<appid>/<url>, eg.
+			// https://cloud.myserver.com/index.php/apps/imagestats
 			'url' => '/stats',
+			// The type of HTTP request, eg. GET, POST, PUT, DELETE
 			'verb' => 'GET',
 		],
 		[
@@ -42,5 +46,6 @@ return [
 			'url' => '/admin/default',
 			'verb' => 'PUT',
 		],
+		// TODO add route with query parameters?
 	],
 ];

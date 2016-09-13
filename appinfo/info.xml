@@ -12,12 +12,28 @@
 
 	<!-- This description is shown next to the app name in the apps list -->
 	<description>Show info about images and thumbnails</description>
+
+	<!-- Every ownCloud app becomes AGPL v3 because that is tho core license -->
+	<!-- You may be able to dual license once the marketplace arrives, but IANAL -->
 	<licence>AGPL</licence>
+
+	<!-- The authors ... TODO actually allow multiple author elements -->
 	<author>Jörn Dreyer</author>
+
+	<!-- The version number ... there are multiple ways how to do your numbering scheme -->
 	<version>0.0.1</version>
+
+	<!-- The types of an app have consequences on the loading order,
+	  eg. session type apps are loaded before authentication.
+	  TODO there is currently no documented order of hooks and app loading, add debug logging? -->
 	<types>
+		<!-- may not even be necessary because be don't provide a storage -->
 		<filesystem/>
 	</types>
+
+	<!-- specify dependencies, at least min and max oc version is necessary
+		 you could also sepcify the php version and php library dependencies
+		 TODO what about composer? It manages php frameworks, can  -->
 	<dependencies>
 		<owncloud min-version="9.2" max-version="9.2" />
 	</dependencies>
