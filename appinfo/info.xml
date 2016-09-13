@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<info>
+	<!-- The id uniquely identifies an app and
+		 can only exist once in an ownCloud instance -->
+	<id>imagestats</id>
+
+	<!-- The namespace is used to tell the classloader where to look -->
+	<namespace>ImageStats</namespace>
+
+	<!-- This name shows up in the apps list-->
+	<name>Image Statistics</name>
+
+	<!-- This description is shown next to the app name in the apps list -->
+	<description>Show info about images and thumbnails</description>
+	<licence>AGPL</licence>
+	<author>Jörn Dreyer</author>
+	<version>0.0.1</version>
+	<types>
+		<filesystem/>
+	</types>
+	<dependencies>
+		<owncloud min-version="9.2" max-version="9.2" />
+	</dependencies>
+</info>

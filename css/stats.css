@@ -1,0 +1,10 @@
+#imageStatsBars .statrow {
+	margin: 2px;
+}
+#imageStatsBars .widthbar {
+	background-color: #00b3ee;
+}
+#imageStatsBars .widthbar span {
+	padding: 2px;
+	color: white;
+}
